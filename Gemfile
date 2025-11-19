@@ -37,4 +37,5 @@ gem "jekyll-seo-tag"
 gem 'jekyll-sass-converter', git: 'https://github.com/jekyll/jekyll-sass-converter', branch: 'master'
 gem "logger"
 gem "csv"
+gem 'base64'
 
