@@ -3,8 +3,8 @@ layout: page
 title: About
 ---
 
-Hey there you wonderful and <span style="color:red">**sexy**</span> person.
-I'm a cyber security student, but the government wants you to believe I am a ✨<span style="color:gold">*reformed*</span>✨ black hat 🎩 ~~script kiddie~~.
+Hey there you wonderful and <span style="color:red">**sexy**</span> Hacker.
+I'm a Cyber Security Graduate, but the government wants you to believe I am a ✨<span style="color:gold">*reformed*</span>✨ black hat 🎩 ~~script kiddie~~.
 
 Btw, here's a real picture of me:
 
