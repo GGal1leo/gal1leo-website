@@ -38,4 +38,5 @@ gem 'jekyll-sass-converter', git: 'https://github.com/jekyll/jekyll-sass-convert
 gem "logger"
 gem "csv"
 gem 'base64'
+gem "bigdecimal"
 
