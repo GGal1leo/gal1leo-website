@@ -1,0 +1,72 @@
+---
+#
+---
+
+@import "base";
+
+@font-face {
+	font-family: "ohgodno";
+	src: url("https://gal1leo.wtf/assets/Pixeboy.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
+
+// #8bit{
+// 	font-family: 'ohgodno';
+// }
+.header-link{
+	padding: 3px;
+}
+.header-link:hover{
+	color: black;
+	background-color: red;
+}
+
+
+
+.image-gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+    justify-content: center;
+    padding: 4px;
+  }
+
+  .box {
+      flex-basis: 25%;
+      width: 100%;
+      padding: 10px;
+      margin: 2px;
+  }
+
+  .img-gallery {
+	width: 100%;
+  height: 200px;
+	object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+  }
+  .img-gallery:hover {
+    transform: scale(1.05);
+  }
+
+
+::-webkit-scrollbar-track
+{
+	background-image: url("/assets/bkg.png");
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-image: url("/assets/bkg.png");
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: rgb(8, 238, 0);
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
