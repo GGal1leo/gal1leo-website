@@ -13,6 +13,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
+    csv (3.3.5)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -54,6 +55,7 @@ GEM
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     mercenary (0.4.0)
     minima (2.5.1)
       jekyll (>= 3.5, < 5.0)
@@ -78,6 +80,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  csv
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.2.2)
   jekyll-feed (~> 0.12)
@@ -85,6 +88,7 @@ DEPENDENCIES
   jekyll-sass-converter!
   jekyll-seo-tag
   jekyll-sitemap
+  logger
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
