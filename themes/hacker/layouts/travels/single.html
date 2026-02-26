@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section>
+  <h2 class="category-title">./TRAVELS</h2>
+
+  {{ range $tagName, $tagPages := .Site.Taxonomies.tags }}
+    {{ $filtered := slice }}
+    {{ range $tagPages.Pages }}
+      {{ if in .Params.categories "travels" }}
+        {{ $filtered = $filtered | append . }}
+      {{ end }}
+    {{ end }}
+    {{ if gt (len $filtered) 0 }}
+    <h2 class="category-section">{{ $tagName }}</h2>
+    <ul>
+      {{ range $filtered }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  {{ end }}
+</section>
+{{ end }}

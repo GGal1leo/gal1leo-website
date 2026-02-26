@@ -1,0 +1,58 @@
+baseURL = "https://gal1leo.wtf/"
+languageCode = "en-us"
+title = "/home/Gal1leo"
+theme = "hacker"
+paginate = 5
+enableRobotsTXT = true
+
+[params]
+  description = "CTF Writeups from a cybersecurity student"
+  author = "Gal1leo"
+  email = "g4l1le0@protonmail.ch"
+  defaultOGImage = "/images/OG-Images/taco.png"
+  googleAnalytics = "G-QK2MLYJTWX"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[markup]
+  [markup.highlight]
+    style = "base16-snazzy"
+    lineNos = false
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "./Writeups"
+    url = "/writeups/"
+    weight = 1
+  [[menu.main]]
+    name = "./Archive"
+    url = "/archive/"
+    weight = 2
+  [[menu.main]]
+    name = "./About"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "./Travels"
+    url = "/travels/"
+    weight = 4
+  [[menu.main]]
+    name = "./Trophies"
+    url = "/trophies/"
+    weight = 5
+  [[menu.main]]
+    name = "./GITHUB"
+    url = "https://github.com/GGal1leo"
+    weight = 6
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[permalinks]
+  posts = "/:sections/:slug/"

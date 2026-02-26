@@ -1,0 +1,532 @@
+/* ==========================================================================
+   Hacker Theme for Hugo — ported from Jekyll hacker theme
+   Original: https://github.com/pages-themes/hacker
+   ========================================================================== */
+
+/* — Fonts — */
+@font-face {
+  font-family: "ohgodno";
+  src: url("/fonts/Pixeboy.ttf") format("truetype");
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
+
+/* — Color variables — */
+:root {
+  --bg: #151515;
+  --fg: #eaeaea;
+  --green: #b5e853;
+  --link: #10bf0d;
+  --blockquote-color: #aaa;
+  --blockquote-border: #666;
+  --code-bg: rgba(0, 0, 0, 0.9);
+  --code-border: rgba(255, 255, 255, 0.15);
+  --code-inline: #aa759f;
+  --glow: rgba(181, 232, 83, 0.1);
+}
+
+/* — Reset & Base — */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg) url("/images/bkg.png") 0 0;
+  color: var(--fg);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+}
+
+/* — Layout — */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+#wrapper {
+  min-height: calc(100vh - 100px);
+}
+
+/* — Typography — */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px;
+  font-weight: normal;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  color: var(--green);
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px var(--glow),
+               0 0 10px var(--glow);
+}
+
+li {
+  line-height: 1.4;
+}
+
+ul li {
+  list-style-image: url('/images/bullet.png');
+}
+
+dt {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* — Header — */
+header {
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed var(--green);
+  padding: 20px;
+  margin: 0 0 40px 0;
+}
+
+header h1 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+  color: var(--green);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px var(--glow),
+               0 0 10px var(--glow);
+  letter-spacing: -1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+header h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header-links {
+  text-align: center;
+}
+
+.header-link {
+  display: inline;
+  padding: 3px;
+  font-family: "ohgodno", monospace;
+  font-size: 150%;
+}
+
+.header-link:hover {
+  color: black;
+  background-color: red;
+}
+
+/* — Main Content — */
+#main_content {
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+section img {
+  max-width: 100%;
+}
+
+#main_content h1 { font-size: 30px; }
+#main_content h2 { font-size: 24px; }
+#main_content h3 { font-size: 18px; }
+#main_content h4 { font-size: 14px; }
+#main_content h5 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+}
+#main_content h6 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #999;
+  margin: 0 0 5px 0;
+}
+
+/* — Blockquotes — */
+blockquote {
+  color: var(--blockquote-color);
+  padding-left: 10px;
+  border-left: 1px dotted var(--blockquote-border);
+}
+
+/* — Code — */
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  padding: 10px;
+  font-size: 16px;
+  color: var(--green);
+  border-radius: 2px;
+  text-wrap: normal;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+code {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  padding: 0px 3px;
+  margin: 0px -3px;
+  color: var(--code-inline);
+  border-radius: 2px;
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+/* — Tables — */
+table {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+th {
+  text-align: left;
+  border-bottom: 1px dashed var(--green);
+  padding: 5px 10px;
+}
+
+td {
+  padding: 5px 10px;
+}
+
+/* — Horizontal Rule — */
+hr {
+  height: 0;
+  border: 0;
+  border-bottom: 1px dashed var(--green);
+  color: var(--green);
+}
+
+/* — Links — */
+a {
+  color: var(--link);
+  text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+/* — Buttons — */
+.btn {
+  display: inline-block;
+  background: linear-gradient(to bottom, rgba(40, 40, 40, 0.3), rgba(35, 35, 35, 0.3) 50%, rgba(10, 10, 10, 0.3) 50%, rgba(0, 0, 0, 0.3));
+  padding: 8px 18px;
+  border-radius: 50px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+  border-top: 2px solid rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom, rgba(40, 40, 40, 0.6), rgba(35, 35, 35, 0.6) 50%, rgba(10, 10, 10, 0.8) 50%, rgba(0, 0, 0, 0.8));
+  text-decoration: none;
+}
+
+/* — Homepage — */
+.home-skull {
+  float: left;
+  height: 300px;
+  width: 300px;
+}
+
+.latest-title {
+  font-family: "ohgodno", monospace;
+  font-size: 300%;
+  text-align: center;
+}
+
+.post-list-title {
+  font-family: "ohgodno", monospace;
+  font-size: 300%;
+}
+
+.post-list-item h4 a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+/* — Post — */
+.post-meta {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.post-meta time {
+  font-style: italic;
+}
+
+/* — Pagination — */
+.pagination {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0 8px;
+}
+
+.page-item {
+  display: inline-block;
+  padding: 0 8px;
+}
+
+/* — Footer — */
+footer {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-top: 1px dashed var(--green);
+  margin-top: 40px;
+}
+
+footer a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* — Image Gallery (trophies) — */
+.image-gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-content: center;
+  padding: 4px;
+}
+
+.box {
+  flex-basis: 25%;
+  width: 100%;
+  padding: 10px;
+  margin: 2px;
+}
+
+.img-gallery {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.img-gallery:hover {
+  transform: scale(1.05);
+}
+
+/* — Category listing — */
+.category-section h2 {
+  font-family: "ohgodno", monospace;
+  font-size: 200%;
+}
+
+.category-title {
+  font-family: "ohgodno", monospace;
+  font-size: 300%;
+}
+
+/* — Scrollbar — */
+::-webkit-scrollbar-track {
+  background-image: url("/images/bkg.png");
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-image: url("/images/bkg.png");
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(8, 238, 0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+    color-stop(.5, rgba(255, 255, 255, .2)),
+    color-stop(.5, transparent), to(transparent));
+}
+
+/* — Clearfix — */
+.cf::before, .cf::after {
+  content: "";
+  display: table;
+}
+.cf::after {
+  clear: both;
+}
+
+/* — Ribbon (corner banner) — */
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+.ribbon-top-right { top: -10px; right: -10px; }
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.ribbon-top-right::before { top: 0; left: 0; }
+.ribbon-top-right::after { bottom: 0; right: 0; }
+.ribbon-top-right span { left: -25px; top: 30px; transform: rotate(45deg); }
+
+/* — Syntax Highlighting (base16 snazzy dark) — */
+.highlight .hll { background-color: #34353e }
+.highlight { background: #282a36; color: #e2e4e5 }
+.highlight .c { color: #78787e } /* Comment */
+.highlight .k { color: #ff6ac1 } /* Keyword */
+.highlight .l { color: #ff9f43 } /* Literal */
+.highlight .n { color: #e2e4e5 } /* Name */
+.highlight .o { color: #ff6ac1 } /* Operator */
+.highlight .p { color: #e2e4e5 } /* Punctuation */
+.highlight .ch { color: #78787e } /* Comment.Hashbang */
+.highlight .cm { color: #78787e } /* Comment.Multiline */
+.highlight .cp { color: #78787e } /* Comment.Preproc */
+.highlight .cpf { color: #78787e } /* Comment.PreprocFile */
+.highlight .c1 { color: #78787e } /* Comment.Single */
+.highlight .cs { color: #78787e } /* Comment.Special */
+.highlight .gd { color: #ff5c57 } /* Generic.Deleted */
+.highlight .gi { color: #5af78e } /* Generic.Inserted */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #57c7ff } /* Generic.Subheading */
+.highlight .kc { color: #ff6ac1 } /* Keyword.Constant */
+.highlight .kd { color: #ff6ac1 } /* Keyword.Declaration */
+.highlight .kn { color: #ff6ac1 } /* Keyword.Namespace */
+.highlight .kp { color: #ff6ac1 } /* Keyword.Pseudo */
+.highlight .kr { color: #ff6ac1 } /* Keyword.Reserved */
+.highlight .kt { color: #9aedfe } /* Keyword.Type */
+.highlight .ld { color: #5af78e } /* Literal.Date */
+.highlight .m { color: #ff9f43 } /* Literal.Number */
+.highlight .s { color: #5af78e } /* Literal.String */
+.highlight .na { color: #57c7ff } /* Name.Attribute */
+.highlight .nb { color: #e2e4e5 } /* Name.Builtin */
+.highlight .nc { color: #f3f99d } /* Name.Class */
+.highlight .no { color: #ff5c57 } /* Name.Constant */
+.highlight .nd { color: #57c7ff } /* Name.Decorator */
+.highlight .ni { color: #e2e4e5 } /* Name.Entity */
+.highlight .ne { color: #ff5c57 } /* Name.Exception */
+.highlight .nf { color: #57c7ff } /* Name.Function */
+.highlight .nl { color: #e2e4e5 } /* Name.Label */
+.highlight .nn { color: #f3f99d } /* Name.Namespace */
+.highlight .nx { color: #57c7ff } /* Name.Other */
+.highlight .py { color: #e2e4e5 } /* Name.Property */
+.highlight .nt { color: #ff6ac1 } /* Name.Tag */
+.highlight .nv { color: #ff5c57 } /* Name.Variable */
+.highlight .ow { color: #ff6ac1 } /* Operator.Word */
+.highlight .w { color: #e2e4e5 } /* Text.Whitespace */
+.highlight .mb { color: #ff9f43 } /* Literal.Number.Bin */
+.highlight .mf { color: #ff9f43 } /* Literal.Number.Float */
+.highlight .mh { color: #ff9f43 } /* Literal.Number.Hex */
+.highlight .mi { color: #ff9f43 } /* Literal.Number.Integer */
+.highlight .mo { color: #ff9f43 } /* Literal.Number.Oct */
+.highlight .sa { color: #5af78e } /* Literal.String.Affix */
+.highlight .sb { color: #5af78e } /* Literal.String.Backtick */
+.highlight .sc { color: #5af78e } /* Literal.String.Char */
+.highlight .dl { color: #5af78e } /* Literal.String.Delimiter */
+.highlight .sd { color: #5af78e } /* Literal.String.Doc */
+.highlight .s2 { color: #5af78e } /* Literal.String.Double */
+.highlight .se { color: #ff9f43 } /* Literal.String.Escape */
+.highlight .sh { color: #5af78e } /* Literal.String.Heredoc */
+.highlight .si { color: #e2e4e5 } /* Literal.String.Interpol */
+.highlight .sx { color: #5af78e } /* Literal.String.Other */
+.highlight .sr { color: #5af78e } /* Literal.String.Regex */
+.highlight .s1 { color: #5af78e } /* Literal.String.Single */
+.highlight .ss { color: #5af78e } /* Literal.String.Symbol */
+.highlight .bp { color: #e2e4e5 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #57c7ff } /* Name.Function.Magic */
+.highlight .vc { color: #ff5c57 } /* Name.Variable.Class */
+.highlight .vg { color: #ff5c57 } /* Name.Variable.Global */
+.highlight .vi { color: #ff5c57 } /* Name.Variable.Instance */
+.highlight .vm { color: #ff5c57 } /* Name.Variable.Magic */
+.highlight .il { color: #ff9f43 } /* Literal.Number.Integer.Long */
+
+/* — Responsive — */
+@media (max-width: 768px) {
+  .home-skull {
+    float: none;
+    display: block;
+    margin: 0 auto 20px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  .header-link {
+    font-size: 120%;
+  }
+
+  .home-skull {
+    height: 150px;
+    width: 150px;
+  }
+}

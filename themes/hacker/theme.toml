@@ -1,0 +1,12 @@
+# theme.toml
+name = "Hacker"
+license = "MIT"
+licenselink = "https://github.com/GGal1leo/gal1leo-website/blob/main/LICENSE"
+description = "A dark terminal/hacker theme for Hugo"
+tags = ["dark", "terminal", "hacker", "ctf", "minimal", "monospace"]
+features = ["dark-theme", "syntax-highlighting", "responsive"]
+min_version = "0.100.0"
+
+[author]
+  name = "Gal1leo"
+  homepage = "https://gal1leo.wtf"

@@ -1,0 +1,4 @@
+---
+title: "Travels"
+type: "travels"
+---

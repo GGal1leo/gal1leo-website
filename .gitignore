@@ -1,0 +1,6 @@
+# .gitignore for Hugo site
+public/
+resources/
+.hugo_build.lock
+_jekyll_backup/
+node_modules/

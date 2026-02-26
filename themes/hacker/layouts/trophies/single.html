@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section>
+  <h2 class="category-title">./TROPHIES</h2>
+
+  <div class="image-gallery">
+    {{ $thumbDir := "images/CTF-Thumbs" }}
+    {{ $trophyDir := "images/CTF-Trophies" }}
+    {{ range (readDir (printf "static/%s" $trophyDir)) }}
+      {{ if strings.HasSuffix .Name ".png" }}
+      {{ $name := replace .Name ".png" "" }}
+      <div class="box">
+        <a href="{{ printf "/%s/%s" $trophyDir .Name | relURL }}" title="{{ $name }}">
+          <img src="{{ printf "/%s/%s" $thumbDir .Name | relURL }}" alt="{{ $name }}" class="img-gallery">
+          <h3 style="text-align: center;">{{ $name }}</h3>
+        </a>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

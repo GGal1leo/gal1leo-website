@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section>
+  <h2 class="category-title">./ARCHIVE</h2>
+
+  {{ $grouped := .Site.RegularPages.GroupByDate "2006" }}
+
+  {{ range $grouped }}
+  <h3>{{ .Key }}</h3>
+  <ul>
+    {{ range .Pages }}
+    <li>
+      <time>{{ .Date.Format "02 Jan" }} - </time>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</section>
+{{ end }}
