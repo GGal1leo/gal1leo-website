@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="terminal-window">
+  <div class="terminal-titlebar">cat {{ .File.Path | default .Title | lower }}</div>
+  <div class="terminal-body">
+    <article>
+      <h2>{{ .Title }}</h2>
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="by-line">{{ .Date.Format "Jan 2, 2006" }}</time>
+      {{ .Content }}
+    </article>
+  </div>
+</div>
+{{ end }}

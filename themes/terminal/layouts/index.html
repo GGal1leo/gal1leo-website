@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="terminal-window">
+  <div class="terminal-titlebar">sys.home — latest entries</div>
+  <div class="terminal-body">
+    <div align="middle">
+      <img align="left" src="{{ "images/skull.gif" | relURL }}" class="home-skull" alt="skull">
+      <h1 class="latest-title">Latest Posts</h1>
+
+      {{ range first 5 .Site.RegularPages }}
+      <article>
+        <h4 class="post-list-item">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">({{ .Date.Format "02 January 2006" }})</time>
+          </span>
+        </h4>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="terminal-window">
+  <div class="terminal-titlebar">cat /var/log/posts.log</div>
+  <div class="terminal-body">
+    <ul>
+      {{ range .Paginator.Pages }}
+      <li>
+        <h2 class="post-list-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <p>{{ .Summary | plainify | truncate 120 }}</p>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

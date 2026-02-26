@@ -1,0 +1,12 @@
+# theme.toml
+name = "Terminal"
+license = "MIT"
+licenselink = "https://github.com/GGal1leo/gal1leo-website/blob/main/LICENSE"
+description = "A retro 1980s CRT terminal theme for Hugo — phosphor green on black with scanlines, flicker, and glow"
+tags = ["dark", "terminal", "retro", "crt", "ctf", "minimal", "monospace", "80s"]
+features = ["dark-theme", "syntax-highlighting", "responsive", "crt-effects", "scanlines"]
+min_version = "0.100.0"
+
+[author]
+  name = "Gal1leo"
+  homepage = "https://gal1leo.wtf"

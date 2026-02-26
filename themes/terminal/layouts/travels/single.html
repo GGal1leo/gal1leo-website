@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="terminal-window">
+  <div class="terminal-titlebar">find /travels -type f</div>
+  <div class="terminal-body">
+    <section>
+      <h2 class="category-title">TRAVELS</h2>
+
+      {{ range $tagName, $tagPages := .Site.Taxonomies.tags }}
+        {{ $filtered := slice }}
+        {{ range $tagPages.Pages }}
+          {{ if in .Params.categories "travels" }}
+            {{ $filtered = $filtered | append . }}
+          {{ end }}
+        {{ end }}
+        {{ if gt (len $filtered) 0 }}
+        <h2 class="category-section">{{ $tagName }}</h2>
+        <ul>
+          {{ range $filtered }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      {{ end }}
+    </section>
+  </div>
+</div>
+{{ end }}

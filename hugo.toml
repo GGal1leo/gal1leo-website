@@ -1,7 +1,7 @@
 baseURL = "https://gal1leo.wtf/"
 languageCode = "en-us"
 title = "/home/Gal1leo"
-theme = "hacker"
+theme = "terminal"
 paginate = 5
 enableRobotsTXT = true
 

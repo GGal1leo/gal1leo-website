@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="terminal-window">
+  <div class="terminal-titlebar">error — 404 not found</div>
+  <div class="terminal-body">
+    <h1>404 — SEGMENTATION FAULT</h1>
+    <p>bash: page: command not found</p>
+    <p>The requested resource does not exist on this system.</p>
+    <p><img src="{{ "images/404.gif" | relURL }}" alt="404"></p>
+    <p><a href="{{ "/" | relURL }}">← cd /home</a></p>
+  </div>
+</div>
+{{ end }}
