@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: #1a0a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* ───── Stars ───── */
+    .stars {
+      position: absolute;
+      inset: 0;
+    }
+    .star {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 3s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ───── Ground ───── */
+    .ground {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 18vh;
+      background: linear-gradient(180deg, #1b4a1b 0%, #0f2e0f 100%);
+      border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+    }
+    .grass-blade {
+      position: absolute;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to top, #2d7a2d, #5abf5a);
+      border-radius: 2px 2px 0 0;
+      transform-origin: bottom center;
+      animation: sway 3s ease-in-out infinite alternate;
+    }
+    @keyframes sway {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+
+    /* ───── Fireflies ───── */
+    .firefly {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: #ffd54f;
+      border-radius: 50%;
+      box-shadow: 0 0 12px 4px rgba(255, 213, 79, 0.6);
+      animation: drift 8s ease-in-out infinite;
+    }
+    @keyframes drift {
+      0%   { transform: translate(0, 0); opacity: 0.3; }
+      25%  { transform: translate(30px, -40px); opacity: 1; }
+      50%  { transform: translate(-20px, -20px); opacity: 0.5; }
+      75%  { transform: translate(10px, -50px); opacity: 0.9; }
+      100% { transform: translate(0, 0); opacity: 0.3; }
+    }
+
+    /* ───── Stem ───── */
+    .flower-container {
+      position: absolute;
+      bottom: 14vh;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .stem {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 0;
+      background: linear-gradient(to top, #2e7d32, #66bb6a);
+      border-radius: 3px;
+      animation: growStem 2s ease-out 0.5s forwards;
+    }
+    @keyframes growStem {
+      to { height: 260px; }
+    }
+
+    /* Leaves */
+    .leaf {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 40px;
+      height: 20px;
+      background: #43a047;
+      border-radius: 0 50% 50% 0;
+      transform-origin: left center;
+      opacity: 0;
+    }
+    .leaf.left {
+      transform: translateX(-100%) rotate(30deg) scale(0);
+      border-radius: 50% 0 0 50%;
+      transform-origin: right center;
+      animation: leafGrowL 0.8s ease-out 1.8s forwards;
+    }
+    .leaf.right {
+      transform: rotate(-30deg) scale(0);
+      animation: leafGrowR 0.8s ease-out 2.1s forwards;
+    }
+    @keyframes leafGrowR {
+      to { opacity: 1; transform: rotate(-30deg) scale(1); }
+    }
+    @keyframes leafGrowL {
+      to { opacity: 1; transform: translateX(-100%) rotate(30deg) scale(1); }
+    }
+
+    /* ───── Flower head ───── */
+    .flower-head {
+      position: absolute;
+      bottom: 260px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      animation: bloomFlower 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.5s forwards;
+    }
+    @keyframes bloomFlower {
+      0%   { transform: translateX(-50%) scale(0) rotate(-30deg); }
+      60%  { transform: translateX(-50%) scale(1.15) rotate(5deg); }
+      100% { transform: translateX(-50%) scale(1) rotate(0deg); }
+    }
+
+    .petal {
+      position: absolute;
+      width: 50px;
+      height: 80px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform-origin: center bottom;
+    }
+
+    /* Five petals in a circle */
+    .petal:nth-child(1) { background: #f48fb1; transform: translate(-50%, -100%) rotate(0deg); }
+    .petal:nth-child(2) { background: #f06292; transform: translate(-50%, -100%) rotate(72deg); }
+    .petal:nth-child(3) { background: #ec407a; transform: translate(-50%, -100%) rotate(144deg); }
+    .petal:nth-child(4) { background: #f06292; transform: translate(-50%, -100%) rotate(216deg); }
+    .petal:nth-child(5) { background: #f48fb1; transform: translate(-50%, -100%) rotate(288deg); }
+
+    .flower-center {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, #fff9c4, #ffd54f);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      box-shadow: 0 0 25px rgba(255, 213, 79, 0.5);
+    }
+
+    /* ───── Name popping out ───── */
+    .name {
+      position: absolute;
+      bottom: 370px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      font-family: 'Dancing Script', cursive;
+      font-size: 5rem;
+      color: #fff;
+      white-space: nowrap;
+      text-shadow:
+        0 0 30px rgba(244, 143, 177, 0.8),
+        0 0 60px rgba(244, 143, 177, 0.5),
+        0 0 100px rgba(244, 143, 177, 0.3);
+      animation: nameAppear 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 3.8s forwards;
+      z-index: 10;
+    }
+    @keyframes nameAppear {
+      0%   { transform: translateX(-50%) scale(0) translateY(40px); opacity: 0; }
+      60%  { transform: translateX(-50%) scale(1.1) translateY(-10px); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1) translateY(0); opacity: 1; }
+    }
+
+    /* Gentle float after appearing */
+    .name.visible {
+      animation: nameFloat 4s ease-in-out infinite;
+    }
+    @keyframes nameFloat {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(-12px); }
+    }
+
+    /* ───── Tiny heart ───── */
+    .tiny-heart {
+      position: absolute;
+      bottom: 440px;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      font-size: 2rem;
+      animation: heartPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 4.8s forwards;
+      filter: drop-shadow(0 0 10px rgba(255, 105, 135, 0.7));
+      z-index: 10;
+    }
+    @keyframes heartPop {
+      0%   { transform: translateX(-50%) scale(0); }
+      70%  { transform: translateX(-50%) scale(1.3); }
+      100% { transform: translateX(-50%) scale(1); }
+    }
+    .tiny-heart.visible {
+      animation: heartbeat 1.3s ease-in-out infinite;
+    }
+    @keyframes heartbeat {
+      0%   { transform: translateX(-50%) scale(1); }
+      15%  { transform: translateX(-50%) scale(1.2); }
+      30%  { transform: translateX(-50%) scale(1); }
+      45%  { transform: translateX(-50%) scale(1.15); }
+      60%  { transform: translateX(-50%) scale(1); }
+    }
+
+    /* ───── Petal particles after bloom ───── */
+    .petal-particle {
+      position: absolute;
+      width: 12px;
+      height: 16px;
+      border-radius: 50% 50% 50% 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    @keyframes petalFall {
+      0%   { opacity: 0.9; transform: translate(0, 0) rotate(0deg) scale(1); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(0.3); }
+    }
+
+    /* ───── Click hearts ───── */
+    .click-heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.8rem;
+      z-index: 999;
+      animation: clickFloat 1.2s ease-out forwards;
+    }
+    @keyframes clickFloat {
+      0%   { opacity: 1; transform: scale(0) translateY(0) rotate(0deg); }
+      40%  { opacity: 1; transform: scale(1.2) translateY(-30px) rotate(-15deg); }
+      100% { opacity: 0; transform: scale(0.6) translateY(-100px) rotate(15deg); }
+    }
+
+    /* ───── Responsive ───── */
+    @media (max-width: 600px) {
+      .name { font-size: 3.2rem; bottom: 350px; }
+      .tiny-heart { bottom: 410px; font-size: 1.5rem; }
+      .flower-head { bottom: 220px; }
+      .stem { animation: growStemMobile 2s ease-out 0.5s forwards; }
+      @keyframes growStemMobile { to { height: 200px; } }
+      .leaf { width: 30px; height: 15px; }
+      .petal { width: 38px; height: 60px; }
+      .flower-center { width: 38px; height: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scene">
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Ground -->
+    <div class="ground" id="ground"></div>
+
+    <!-- Flower -->
+    <div class="flower-container">
+      <!-- Stem -->
+      <div class="stem"></div>
+
+      <!-- Leaves -->
+      <div class="leaf left" style="bottom: 80px;"></div>
+      <div class="leaf right" style="bottom: 140px;"></div>
+
+      <!-- Flower head -->
+      <div class="flower-head" id="flowerHead">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="flower-center"></div>
+      </div>
+
+      <!-- Name -->
+      <div class="name" id="nameEl">I love you, Anjali</div>
+      <div class="tiny-heart" id="heartEl">💖</div>
+    </div>
+  </div>
+
+  <script>
+    // Stars
+    const starsEl = document.getElementById('stars');
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 70 + '%';
+      star.style.width = star.style.height = (1 + Math.random() * 3) + 'px';
+      star.style.animationDelay = Math.random() * 4 + 's';
+      star.style.animationDuration = (2 + Math.random() * 3) + 's';
+      starsEl.appendChild(star);
+    }
+
+    // Grass
+    const groundEl = document.getElementById('ground');
+    for (let i = 0; i < 60; i++) {
+      const blade = document.createElement('div');
+      blade.className = 'grass-blade';
+      blade.style.left = Math.random() * 100 + '%';
+      blade.style.height = (20 + Math.random() * 35) + 'px';
+      blade.style.animationDelay = Math.random() * 3 + 's';
+      blade.style.animationDuration = (2 + Math.random() * 2) + 's';
+      groundEl.appendChild(blade);
+    }
+
+    // Fireflies
+    const scene = document.querySelector('.scene');
+    for (let i = 0; i < 12; i++) {
+      const ff = document.createElement('div');
+      ff.className = 'firefly';
+      ff.style.left = (10 + Math.random() * 80) + '%';
+      ff.style.top = (10 + Math.random() * 60) + '%';
+      ff.style.animationDelay = Math.random() * 6 + 's';
+      ff.style.animationDuration = (6 + Math.random() * 6) + 's';
+      scene.appendChild(ff);
+    }
+
+    // Falling petal particles after bloom
+    setTimeout(() => {
+      const flowerHead = document.getElementById('flowerHead');
+      const rect = flowerHead.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const colors = ['#f48fb1', '#f06292', '#ec407a', '#f8bbd0', '#fce4ec'];
+
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+          const p = document.createElement('div');
+          p.className = 'petal-particle';
+          p.style.background = colors[Math.floor(Math.random() * colors.length)];
+          p.style.left = cx + 'px';
+          p.style.top = cy + 'px';
+          p.style.setProperty('--dx', (Math.random() - 0.5) * 300 + 'px');
+          p.style.setProperty('--dy', (100 + Math.random() * 200) + 'px');
+          p.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+          p.style.animation = `petalFall ${2 + Math.random() * 2}s ease-out forwards`;
+          document.body.appendChild(p);
+          setTimeout(() => p.remove(), 4000);
+        }, i * 120);
+      }
+    }, 3800);
+
+    // After animations settle, switch to idle float
+    setTimeout(() => {
+      document.getElementById('nameEl').classList.add('visible');
+      document.getElementById('heartEl').classList.add('visible');
+    }, 5500);
+
+    // Click to spawn hearts
+    const hearts = ['💖', '💕', '💗', '💓', '🩷'];
+    document.addEventListener('click', (e) => {
+      const h = document.createElement('div');
+      h.className = 'click-heart';
+      h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      h.style.left = (e.clientX - 14) + 'px';
+      h.style.top = (e.clientY - 14) + 'px';
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 1200);
+    });
+  </script>
+</body>
+</html>
